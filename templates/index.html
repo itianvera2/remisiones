@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Remisiones - Hannah Logística</title>
+</head>
+<body>
+    <h1>Registro de Remisiones</h1>
+    <form method="POST">
+        Fecha: <input type="date" name="fecha"><br><br>
+        Cliente: <input type="text" name="cliente"><br><br>
+        Dirección: <input type="text" name="direccion"><br><br>
+        Ciudad: <input type="text" name="ciudad"><br><br>
+        Teléfono: <input type="text" name="telefono"><br><br>
+        Conductor: <input type="text" name="conductor"><br><br>
+        Cédula: <input type="text" name="cedula"><br><br>
+        Placa: <input type="text" name="placa"><br><br>
+        Ruta: <input type="text" name="ruta"><br><br>
+        Producto: <input type="text" name="producto"><br><br>
+        Cantidad: <input type="number" name="cantidad"><br><br>
+        Factura: <input type="text" name="factura"><br><br>
+        Observaciones: <textarea name="observaciones"></textarea><br><br>
+        <input type="submit" value="Guardar y Generar PDF">
+    </form>
+
+    <h2>Historial de Remisiones</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th><th>Fecha</th><th>Cliente</th><th>Placa</th><th>Factura</th>
+        </tr>
+        {% for remision in remisiones %}
+        <tr>
+            <td>{{ remision[0] }}</td>
+            <td>{{ remision[1] }}</td>
+            <td>{{ remision[2] }}</td>
+            <td>{{ remision[8] }}</td>
+            <td>{{ remision[12] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
